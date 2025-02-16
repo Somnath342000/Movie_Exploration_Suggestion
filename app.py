@@ -69,6 +69,9 @@ st.write('''My Other Projects :
             Retail Techstore Sales Analysis (Please Go through the link) : https://salesanalytics-somnath-techstore.streamlit.app/''')
 
 
+st.write('''Thank You So Much''')
+
+
 # List of the first 4 images for the slideshow
 image_paths_first_4 = [
     "cinemaimage04.jpg",
