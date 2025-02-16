@@ -63,8 +63,10 @@ st.title("Movie Exploration")
 
 st.write('''Welcome to the **movie exploration**website. Here, I have **4808** movies collection from **Hollywood**.
          Use this website to explore movie details, it helps you to **Fetch Details** of Movies, so olease enter or select a movie
-         name & ''')
+         name & Other details''')
 
+st.write('''My Other Projects :
+            Retail Techstore Sales Analysis (Please Go through the link) : https://salesanalytics-somnath-techstore.streamlit.app/''')
 
 
 # List of the first 4 images for the slideshow
