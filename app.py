@@ -80,7 +80,7 @@ image_paths_first_6 = [
 # Create a slideshow for the first 6 images with a 2-second interval
 placeholder_1 = st.empty()  # Empty placeholder to refresh the image
 for i in range(len(image_paths_first_6)):
-    placeholder_1.image(image_paths_first_4[i], caption="Explore the Magic of Cinema", use_container_width=True)
+    placeholder_1.image(image_paths_first_6[i], caption="Explore the Magic of Cinema", use_container_width=True)
     time.sleep(7)  # Wait for 7 seconds before displaying the next image
 
 # -------------------------------------------------------------------------------------------------------------------
