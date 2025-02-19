@@ -67,7 +67,7 @@ st.write('''Welcome to the **movie exploration**website. Here, I have **4808** m
 st.write('''My Other Projects :
             Retail Techstore Sales Analysis (Please Go through the link) : https://salesanalytics-somnath-techstore.streamlit.app/''')
 
-st.image('cinemaimage08.jpg', caption='Welcome to sales dashboard & forcating', use_container_width=True)
+st.image('cinemaimage08.jpg', caption='Welcome to Movie Exploration', use_container_width=True)
 
 # -------------------------------------------------------------------------------------------------------------------
 
