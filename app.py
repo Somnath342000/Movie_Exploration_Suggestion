@@ -150,38 +150,6 @@ for i in range(len(image_paths_last_4)):
     placeholder_2.image(image_paths_last_4[i], caption="Explore the Magic of Cinema", use_container_width=True)
     time.sleep(2)  # Wait for 2 seconds before displaying the next image
 
-# -------------------------------------------------------------------------------------------------------------------
-
-# Feedback Section - Save Feedback to SQLite
-conn = sqlite3.connect('moviefeedback.db')
-cursor = conn.cursor()
-
-cursor.execute(''' 
-    CREATE TABLE IF NOT EXISTS feedbacks (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        email TEXT NOT NULL,
-        feedback TEXT NOT NULL
-    )
-''')
-conn.commit()
-
-st.write("## **We value your feedback!**")
-feedback = st.text_area("Please leave your feedback here:")
-email = st.text_input("Enter your email address:")
-
-if st.button('Submit Feedback'):
-    if feedback and email:
-        cursor.execute(''' 
-            INSERT INTO feedbacks (email, feedback) VALUES (?, ?) 
-        ''', (email, feedback))
-        conn.commit()
-
-        st.write(f"Thank you for your feedback, {email}!")
-        st.write("Your feedback has been submitted successfully.")
-    else:
-        st.error("Please provide both your email and feedback.")
-
-conn.close()
 
 # -------------------------------------------------------------------------------------------------------------------
 
@@ -190,15 +158,3 @@ st.write('''Hollywood is a district in Los Angeles, California, known as the hea
 It's where many major movie studios are based, and it's famous worldwide as the center of entertainment production.
 This Code is written by Somnath Banerjee. Mail : somnathbanerjee342000@gmail.com''')
 
-# -------------------------------------------------------------------------------------------------------------------
-
-# Customizing button style - Make the button background green using CSS
-st.markdown(
-    """
-    <style>
-    .css-18e3th9 {
-        background-color: green !important;
-        color: white !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
