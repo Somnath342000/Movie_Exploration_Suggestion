@@ -62,15 +62,11 @@ def fetch_movie_details(movie_name):
 st.title("Movie Exploration")
 
 st.write('''Welcome to the **movie exploration**website. Here, I have **4808** movies collection from **Hollywood**.
-         Use this website to explore movie details, it helps you to **Fetch Details** of Movies, so olease enter or select a movie
+         Use this website to explore movie details, it helps you to **Get Details** of Movies, so olease enter or select a movie
          name & Other details''')
 
 st.write('''My Other Projects :
             Retail Techstore Sales Analysis (Please Go through the link) : https://salesanalytics-somnath-techstore.streamlit.app/''')
-
-
-st.write('''Thank You So Much''')
-
 
 # List of the first 4 images for the slideshow
 image_paths_first_4 = [
@@ -148,7 +144,7 @@ image_paths_last_4 = [
 placeholder_2 = st.empty()  # Empty placeholder for second slideshow
 for i in range(len(image_paths_last_4)):
     placeholder_2.image(image_paths_last_4[i], caption="Explore the Magic of Cinema", use_container_width=True)
-    time.sleep(2)  # Wait for 2 seconds before displaying the next image
+    time.sleep(7)  # Wait for 2 seconds before displaying the next image
 
 
 # -------------------------------------------------------------------------------------------------------------------
