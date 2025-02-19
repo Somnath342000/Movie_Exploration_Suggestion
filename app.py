@@ -84,7 +84,7 @@ image_paths_first_4 = [
 placeholder_1 = st.empty()  # Empty placeholder to refresh the image
 for i in range(len(image_paths_first_4)):
     placeholder_1.image(image_paths_first_4[i], caption="Explore the Magic of Cinema", use_container_width=True)
-    time.sleep(1)  # Wait for 2 seconds before displaying the next image
+    time.sleep(7)  # Wait for 7 seconds before displaying the next image
 
 # -------------------------------------------------------------------------------------------------------------------
 
