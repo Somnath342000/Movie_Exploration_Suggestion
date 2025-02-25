@@ -67,6 +67,8 @@ st.write('''Welcome to the **movie exploration**website. Here, I have **4808** m
 st.write('''My Other Projects :
             Retail Techstore Sales Analysis (Please Go through the link) : https://salesanalytics-somnath-techstore.streamlit.app/''')
 
+st.write('''My other project link  (Bengali Audio Story Dictionary) :  https://bengaliaudiostorysomnathbanerjee.streamlit.app/''')
+
 st.image('cinemaimage08.jpg', caption='Welcome to Movie Exploration', use_container_width=True)
 
 # -------------------------------------------------------------------------------------------------------------------
