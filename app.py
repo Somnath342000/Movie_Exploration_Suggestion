@@ -69,6 +69,8 @@ st.write('''My Other Projects :
 
 st.write('''My other project link  (Bengali Audio Story Dictionary) :  https://bengaliaudiostorysomnathbanerjee.streamlit.app/''')
 
+st.write('''My other project link  (Lok Sava) : https://loksavasomnath.streamlit.app/''')
+
 st.image('cinemaimage08.jpg', caption='Welcome to Movie Exploration', use_container_width=True)
 
 # -------------------------------------------------------------------------------------------------------------------
