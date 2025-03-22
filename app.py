@@ -149,7 +149,7 @@ try:
 
         # Show filtered results in a table
         st.subheader("📌 Filtered Movie List")
-        st.markdown(filtered_df[['title', 'crew', 'genres1', 'cast1', 'cast2', 'tagline', 'homepage']].head(20).to_html(escape=False), unsafe_allow_html=True)
+        st.markdown(filtered_df[['title', 'RANK', 'crew', 'genres1', 'Generes2' 'cast1', 'cast2', 'tagline']].head(20).to_html(escape=False), unsafe_allow_html=True)
 
     else:
         st.error(f"Failed to retrieve the file. HTTP Status code: {response.status_code}")
