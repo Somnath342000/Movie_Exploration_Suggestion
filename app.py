@@ -3,6 +3,7 @@ import pandas as pd
 import pickle
 import requests
 import time
+from io import BytesIO
 
 
 # Apply custom CSS for button styling
@@ -108,6 +109,54 @@ if st.button('Get Movie Details'):
         st.write("Please select a movie to get details.")
 
 # -------------------------------------------------------------------------------------------------------------------
+# GitHub raw URL for the Excel file
+movie_data_url = "https://raw.githubusercontent.com/Somnath342000/Movie_Exploration_Suggestion/main/hollywoodmoviesdata.xlsx"
+
+# Try fetching the data
+try:
+    # Make the request to get the file content
+    response = requests.get(movie_data_url)
+    
+    if response.status_code == 200:
+        st.success("Movie data loaded successfully from GitHub")
+        
+        # Load the Excel file into a pandas DataFrame
+        df_movies = pd.read_excel(BytesIO(response.content), engine="openpyxl")
+
+        # Filtering options for the movie data (same as before)
+        selected_RANK = st.selectbox("Select RANK", ["All"] + df_movies["RANK"].unique().tolist())
+        selected_genre1 = st.selectbox("Select Genre1", ["All"] + df_movies["genres1"].unique().tolist())
+        selected_genre2 = st.selectbox("Select Genre2", ["All"] + df_movies["Generes2"].unique().tolist())
+        selected_cast1 = st.selectbox("Select Cast", ["All"] + df_movies["cast1"].unique().tolist())
+        selected_cast2 = st.selectbox("Select Cast", ["All"] + df_movies["cast2"].unique().tolist())
+        selected_crew = st.selectbox("Select Director", ["All"] + df_movies["crew"].unique().tolist())
+
+        # Apply filters based on user selections
+        filtered_df = df_movies.copy()
+
+        if selected_RANK != "All":
+            filtered_df = filtered_df[filtered_df["RANK"] == selected_RANK]
+        if selected_genre1 != "All":
+            filtered_df = filtered_df[filtered_df["genres1"] == selected_genre1]
+        if selected_genre2 != "All":
+            filtered_df = filtered_df[filtered_df["Generes2"] == selected_genre2]
+        if selected_cast1 != "All":
+            filtered_df = filtered_df[filtered_df["cast1"] == selected_cast1]
+        if selected_cast2 != "All":
+            filtered_df = filtered_df[filtered_df["cast2"] == selected_cast2]
+        if selected_crew != "All":
+            filtered_df = filtered_df[filtered_df["crew"] == selected_crew]
+
+        # Show filtered results in a table
+        st.subheader("📌 Filtered Movie List")
+        st.markdown(filtered_df[['title', 'crew', 'genres1', 'cast1', 'cast2', 'tagline', 'homepage']].to_html(escape=False), unsafe_allow_html=True)
+
+    else:
+        st.error(f"Failed to retrieve the file. HTTP Status code: {response.status_code}")
+
+except Exception as e:
+    st.error(f"An error occurred while processing the file: {e}")
+# -----------------------------------------------------------------------------------------------------------------
 
 # Display information about genres and styles in cinema
 st.write('''Genres and Styles:  
