@@ -122,7 +122,7 @@ try:
         
         # Load the Excel file into a pandas DataFrame
         df_movies = pd.read_excel(BytesIO(response.content), engine="openpyxl")
-
+        st.header("🔍Find your Movies")
         # Filtering options for the movie data (same as before)
         selected_RANK = st.selectbox("Select RANK", ["All"] + df_movies["RANK"].unique().tolist())
         selected_genre1 = st.selectbox("Select Genre1", ["All"] + df_movies["genres1"].unique().tolist())
